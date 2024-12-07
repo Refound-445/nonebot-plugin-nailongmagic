@@ -1,0 +1,2 @@
+# nonebot-plugin-nailongmagic
+None
