@@ -15,6 +15,7 @@ dependencies = [
     "huggingface-hub>=0.26.2",
     "torch>=2.4",
     "torchvision>=0.19",
+    "diffusers>=0.31.0",
 ]
 license = { text = "MIT" }
 readme = "README.md"
