@@ -25,5 +25,5 @@ jobs:
 
       - name: Build and Publish distribution 📦 to PyPI
         run: |-
-          pdm pre-install
+          pdm install
           pdm pub-all-pub
