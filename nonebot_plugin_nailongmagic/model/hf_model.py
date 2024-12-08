@@ -11,7 +11,7 @@ token = config.nailongmagic_hf_token
 device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
 
 pipeline = AutoPipelineForImage2Image.from_pretrained(
-    "stable-diffusion-v1-5/stable-diffusion-v1-5", torch_dtype=torch.float16, variant="fp16", use_safetensors=True,
+    "stable-diffusion-v1-5/stable-diffusion-v1-5", torch_dtype=torch.float16 if torch.cuda.is_available() else None, variant="fp16", use_safetensors=True,
     cache_dir=config.nailongmagic_cache_dir,token=token
 ).to(device)
 pipeline.load_lora_weights("refoundd/NailongT", weight_name="pytorch_lora_weights.safetensors", adapter_name="nailong",
