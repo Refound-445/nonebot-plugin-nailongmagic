@@ -9,7 +9,7 @@ require("nonebot_plugin_uninfo")
 from . import handler as handler
 from .config import Config
 
-__version__ = "1.0.2.post3"
+__version__ = "1.0.2.post4"
 __plugin_meta__ = PluginMetadata(
     name="奶龙魔法",
     description="世界就是一个巨大的奶龙~",
