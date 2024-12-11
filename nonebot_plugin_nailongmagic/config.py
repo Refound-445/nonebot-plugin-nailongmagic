@@ -1,7 +1,7 @@
+import os
 from pathlib import Path
 from typing import Any, List, Optional
 
-from cookit.pyd import field_validator
 from nonebot import get_plugin_config
 from pydantic import BaseModel, Field
 
@@ -18,18 +18,12 @@ class Config(BaseModel):
     nailongmagic_prompt: List[str] = ["nailong"]
 
     nailongmagic_cache_dir: Path = Field(
-        default_factory=lambda: Path.cwd() / "data" / "nailongmagic",
+        default_factory=lambda: Path(os.getenv('LOCALAPPDATA', Path.cwd() / 'data')) / 'nailongmagic'
     )
     nailongmagic_auto_update_model: bool = True
 
     nailongmagic_hf_token: Optional[str] = None
 
 
-    @field_validator(
-        "nailongmagic_tip",
-        mode="before",
-    )
-    def transform_to_list(cls, v: Any):  # noqa: N805
-        return v if isinstance(v, list) else [v]
 
 config = get_plugin_config(Config)
