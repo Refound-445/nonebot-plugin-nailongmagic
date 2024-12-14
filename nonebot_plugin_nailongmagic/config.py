@@ -4,11 +4,7 @@ from typing import Any, List, Optional
 
 from nonebot import get_plugin_config
 from pydantic import BaseModel, Field
-from nonebot import require
 
-require("nonebot_plugin_localstore")
-
-import nonebot_plugin_localstore as store
 
 class Config(BaseModel):
     proxy: Optional[str] = None
