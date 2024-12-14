@@ -10,6 +10,7 @@ dependencies = [
     "nonebot2>=2.2.0",
     "nonebot-plugin-alconna>=0.53.1",
     "nonebot-plugin-uninfo>=0.5.0",
+    "nonebot_plugin_localstore>=0.7.2",
     "pillow>=9",
     "cookit[pydantic]>=0.8.1",
     "huggingface-hub>=0.26.2",
