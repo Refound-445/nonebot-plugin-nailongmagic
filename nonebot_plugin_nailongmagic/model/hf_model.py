@@ -8,6 +8,11 @@ from PIL import Image as PILImage
 from ..config import config
 # import os
 # os.environ["CUDA_VISIBLE_DEVICES"] = "-1"
+from nonebot import require
+
+require("nonebot_plugin_localstore")
+
+import nonebot_plugin_localstore as store
 
 token = config.nailongmagic_hf_token
 device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
