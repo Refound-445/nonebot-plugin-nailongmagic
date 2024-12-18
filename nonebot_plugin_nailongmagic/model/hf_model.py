@@ -4,7 +4,7 @@ from io import BytesIO
 import torch
 
 from diffusers import AutoPipelineForImage2Image
-from PIL import Image as PILImage
+from PIL.ImageFile import ImageFile as PILImageFile
 
 from ..config import config
 
@@ -33,7 +33,7 @@ if torch.cuda.is_available():
 # prepare image
 
 
-async def check(init_image:PILImage, prompt: str) -> Image:
+async def check(init_image:PILImageFile, prompt: str) -> Image:
     init_image = init_image.convert("RGB")
     generator = torch.Generator(device=device).manual_seed(33)
     # pass prompt and image to pipeline
